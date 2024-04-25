@@ -3,8 +3,8 @@ let scores, roundScore, acitePlayer, gamePlaying;
 init();
 
 
-document.querySelector(".btn-roll").addEventListener('click', () => {
-
+// Function to handle dice roll
+function rollDice() {
     if (gamePlaying) {
         // Random Number
         let dice = Math.floor(Math.random() * 6) + 1;
@@ -21,12 +21,12 @@ document.querySelector(".btn-roll").addEventListener('click', () => {
             // Next Player
             nextPlayer();
         }
-    } else {
-
     }
+}
 
+// Event listener for roll button
+document.querySelector(".btn-roll").addEventListener('click', rollDice);
 
-});
 
 document.querySelector(".btn-hold").addEventListener("click", () => {
     if (gamePlaying) {
